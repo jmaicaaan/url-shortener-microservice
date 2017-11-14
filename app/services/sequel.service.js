@@ -4,10 +4,18 @@ class SequelService {
   _sequel;
 
   constructor() {
-    this._sequel = new Sequelize('fcc-url-ms', 'postgres', 'jmsantos17', {
-      host: 'localhost',
-      dialect: 'postgres'
-    });
+    if (process.env.NODE_ENV == 'PRODUCTION') {
+      this._sequel = new Sequelize(process.env.DATABASE_URL, {
+        dialectOptions: {
+          ssl: true
+        }
+      });
+    } else {
+      this._sequel = new Sequelize('fcc-url-ms', 'postgres', 'jmsantos17', {
+        host: 'localhost',
+        dialect: 'postgres'
+      });
+    }
   }
 
   getInstance = () => {

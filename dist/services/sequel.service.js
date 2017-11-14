@@ -22,10 +22,18 @@ var SequelService = function SequelService() {
     return _this._sequel;
   };
 
-  this._sequel = new _sequelize2.default('fcc-url-ms', 'postgres', 'jmsantos17', {
-    host: 'localhost',
-    dialect: 'postgres'
-  });
+  if (process.env.NODE_ENV == 'PRODUCTION') {
+    this._sequel = new _sequelize2.default(process.env.DATABASE_URL, {
+      dialectOptions: {
+        ssl: true
+      }
+    });
+  } else {
+    this._sequel = new _sequelize2.default('fcc-url-ms', 'postgres', 'jmsantos17', {
+      host: 'localhost',
+      dialect: 'postgres'
+    });
+  }
 };
 
 exports.SequelService = SequelService;
