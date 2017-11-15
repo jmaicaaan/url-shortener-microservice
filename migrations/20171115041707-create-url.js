@@ -11,6 +11,8 @@ module.exports = {
       original_url: {
         type: Sequelize.STRING
       }
+    }, {
+      dialect: 'postgres'
     });
   },
   down: (queryInterface, Sequelize) => {
