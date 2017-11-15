@@ -24,7 +24,7 @@ function redirectUrlHandler(req, res) {
       return res.redirect(data.original_url);
     })
     .catch((err) => {
-      res.send(err);
+      return res.send(err);
     });
 }
 

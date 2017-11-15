@@ -45,6 +45,7 @@ var UrlService = function UrlService() {
         return data;
       });
     }
+    throw 'No id passed';
   };
 
   this.reset = function () {

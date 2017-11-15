@@ -29,6 +29,7 @@ class UrlService {
         }
       }).then((data) => data);
     }
+    throw 'No id passed';
   };
 
   reset = () => {

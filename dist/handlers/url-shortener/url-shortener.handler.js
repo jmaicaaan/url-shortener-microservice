@@ -33,7 +33,7 @@ function redirectUrlHandler(req, res) {
   return urlService.findUrlById(urlId).then(function (data) {
     return res.redirect(data.original_url);
   }).catch(function (err) {
-    res.send(err);
+    return res.send(err);
   });
 }
 
