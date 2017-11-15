@@ -19,16 +19,16 @@ describe('url-shortener', function () {
         assert.equal(res.body.url, url);
         done(err);
       });
-    });
+    }).timeout(15000);
     it('should not be able to add invalid url', function (done) {
       var url = 'www.invalid-url.com';
       server(app).get('/url').query({ url: url }).expect(500, done);
-    });
+    }).timeout(15000);
     it('should be able to retrieve with given id', function (done) {
       server(app).get('/url/1').expect(302).end(function (err, res) {
         assert.equal(res.headers.hasOwnProperty('location'), true);
         done(err);
       });
-    });
+    }).timeout(15000);
   });
 });

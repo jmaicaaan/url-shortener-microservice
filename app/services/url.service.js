@@ -1,13 +1,13 @@
 import Sequelize from 'sequelize';
 import { SequelService } from './sequel.service';
-import { Url } from '../model/url';
+const Url = require('../../models/url');
 
 class UrlService {
   _url;
 
   constructor() {
     const sequel = new SequelService().getInstance();
-    this._url = sequel.define(Url.name, Url.attributes, Url.options);
+    this._url = Url(sequel, Sequelize);
   }
 
   addUrl = (originalUrl) => {

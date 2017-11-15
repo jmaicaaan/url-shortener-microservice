@@ -11,11 +11,11 @@ var _sequelize2 = _interopRequireDefault(_sequelize);
 
 var _sequel = require('./sequel.service');
 
-var _url = require('../model/url');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Url = require('../../models/url');
 
 var UrlService = function UrlService() {
   var _this = this;
@@ -52,7 +52,7 @@ var UrlService = function UrlService() {
   };
 
   var sequel = new _sequel.SequelService().getInstance();
-  this._url = sequel.define(_url.Url.name, _url.Url.attributes, _url.Url.options);
+  this._url = Url(sequel, _sequelize2.default);
 };
 
 exports.UrlService = UrlService;

@@ -22,7 +22,7 @@ var SequelService = function SequelService() {
     return _this._sequel;
   };
 
-  if (process.env.NODE_ENV == 'PRODUCTION') {
+  if (process.env.NODE_ENV == 'production') {
     this._sequel = new _sequelize2.default(process.env.DATABASE_URL, {
       dialectOptions: {
         ssl: true

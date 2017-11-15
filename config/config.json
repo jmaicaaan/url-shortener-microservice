@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "jmsantos17",
+    "database": "fcc-url-ms",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "rcsrrszfcqtdeq",
+    "password": "9ccb8ff880829510a0faabdd7bac724b81e181b50fde13d9c3303f44f6ecd864",
+    "database": "d72h8f4u24a8lu",
+    "host": "ec2-107-20-193-74.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  }
+}

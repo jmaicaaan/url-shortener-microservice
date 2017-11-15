@@ -23,14 +23,14 @@ describe('url-shortener', () => {
           assert.equal(res.body.url, url);
           done(err);
         });
-    });
+    }).timeout(15000);
     it('should not be able to add invalid url', done => {
       let url = 'www.invalid-url.com';
       server(app)
         .get('/url')
         .query({ url: url })
         .expect(500, done);
-    });
+    }).timeout(15000);
     it('should be able to retrieve with given id', done => {
       server(app)
         .get('/url/1')
@@ -39,6 +39,6 @@ describe('url-shortener', () => {
           assert.equal(res.headers.hasOwnProperty('location'), true);
           done(err);
         });
-    });
+    }).timeout(15000);
   });
 });
