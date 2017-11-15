@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jmaicaaan/url-shortener-microservice.svg?branch=master)](https://travis-ci.org/jmaicaaan/url-shortener-microservice)
+
 # url-shortener-microservice
 In completion of FreeCodeCamp back end certificate - A url shortener microservice written in node.js
 
