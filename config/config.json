@@ -7,9 +7,9 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "postgres",
+    "password": "jmsantos17",
+    "database": "fcc-url-ms",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
