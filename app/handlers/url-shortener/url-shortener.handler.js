@@ -30,7 +30,7 @@ function redirectUrlHandler(req, res) {
 
 function shortenUrl(req, id) {
   let host = req.headers.host || req.headers.origin;
-  return [host, id].join('/')
+  return [host, 'url', id].join('/')
 }
 
 export { urlShortenerHandler, redirectUrlHandler } 
