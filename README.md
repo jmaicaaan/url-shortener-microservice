@@ -3,6 +3,10 @@
 # url-shortener-microservice
 In completion of FreeCodeCamp back end certificate - A url shortener microservice written in node.js
 
+# API
+   - https://fcc-node-url-shortener-ms.herokuapp.com/url?url=http://www.github.com
+   - https://fcc-node-url-shortener-ms.herokuapp.com/url/1
+
 
 # Developer note
 
