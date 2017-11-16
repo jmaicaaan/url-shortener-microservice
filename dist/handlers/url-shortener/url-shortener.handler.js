@@ -38,20 +38,8 @@ function redirectUrlHandler(req, res) {
 }
 
 function shortenUrl(req, id) {
-  var ip = getIPAddress(req);
-  return [ip, id].join('/');
-}
-
-function getIPAddress(req) {
-  if (!req) {
-    throw 'No request object found';
-  }
-  var headers = req.headers;
-  if (headers['x-forwarded-for']) {
-    return headers['x-forwarded-for'].split(',').pop();
-  } else {
-    return req.connection.remoteAddress || req.socket.remoteAddress;
-  }
+  var host = req.headers.host || req.headers.origin;
+  return [host, id].join('/');
 }
 
 exports.urlShortenerHandler = urlShortenerHandler;

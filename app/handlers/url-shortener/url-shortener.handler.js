@@ -29,20 +29,8 @@ function redirectUrlHandler(req, res) {
 }
 
 function shortenUrl(req, id) {
-  let ip = getIPAddress(req);
-  return [ip, id].join('/')
-}
-
-function getIPAddress(req) {
-  if (!req) {
-    throw 'No request object found';
-  }
-  let headers = req.headers;
-  if (headers['x-forwarded-for']) {
-    return headers['x-forwarded-for'].split(',').pop();
-  } else {
-    return req.connection.remoteAddress || req.socket.remoteAddress;
-  }
+  let host = req.headers.host || req.headers.origin;
+  return [host, id].join('/')
 }
 
 export { urlShortenerHandler, redirectUrlHandler } 
