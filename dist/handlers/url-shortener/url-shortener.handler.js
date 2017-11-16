@@ -39,7 +39,7 @@ function redirectUrlHandler(req, res) {
 
 function shortenUrl(req, id) {
   var host = req.headers.host || req.headers.origin;
-  return [host, id].join('/');
+  return [host, 'url', id].join('/');
 }
 
 exports.urlShortenerHandler = urlShortenerHandler;
